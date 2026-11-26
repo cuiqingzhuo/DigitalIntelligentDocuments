@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: diw
+      POSTGRES_USER: diw
+      POSTGRES_PASSWORD: ${DIW_DB_PASSWORD:-diw-local-demo}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U diw -d diw"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - db:/var/lib/postgresql/data
+  app:
+    build:
+      context: .
+      args:
+        DIW_WITH_OBB: ${DIW_WITH_OBB:-0}
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DIW_DATABASE_URL: postgresql+psycopg://diw:${DIW_DB_PASSWORD:-diw-local-demo}@db:5432/diw
+      DIW_DEMO: ${DIW_DEMO:-1}
+      DIW_TOKENS_JSON: ${DIW_TOKENS_JSON:-}
+      DIW_PUBLIC_LIBRARY: ${DIW_PUBLIC_LIBRARY:-demo}
+      DIW_PUBLIC_FLOOR: ${DIW_PUBLIC_FLOOR:-F1}
+      DIW_CLOUD_REVIEW: ${DIW_CLOUD_REVIEW:-1}
+      DIW_PHOTO_RETENTION_DAYS: ${DIW_PHOTO_RETENTION_DAYS:-0}
+    ports:
+      - "${DIW_BIND_ADDRESS:-127.0.0.1}:${DIW_PORT:-8000}:8000"
+    volumes:
+      - runtime:/srv/diw/runtime
+volumes:
+  db:
+  runtime:

@@ -1,0 +1,290 @@
+{
+  "dataset": "SpineText-40 auxiliary",
+  "scope": "full-photo OCR, whitespace ignored after NFKC",
+  "images": 40,
+  "reference_chars": 20577,
+  "edits": 17141,
+  "cer": 0.8330174466637508,
+  "records": [
+    {
+      "image": "000001.jpg",
+      "reference_chars": 666,
+      "predicted_chars": 583,
+      "edits": 599,
+      "ms": 6851
+    },
+    {
+      "image": "000002.jpg",
+      "reference_chars": 612,
+      "predicted_chars": 634,
+      "edits": 520,
+      "ms": 7302
+    },
+    {
+      "image": "000003.jpg",
+      "reference_chars": 746,
+      "predicted_chars": 642,
+      "edits": 612,
+      "ms": 6617
+    },
+    {
+      "image": "000004.jpg",
+      "reference_chars": 854,
+      "predicted_chars": 755,
+      "edits": 753,
+      "ms": 6522
+    },
+    {
+      "image": "000005.jpg",
+      "reference_chars": 914,
+      "predicted_chars": 812,
+      "edits": 761,
+      "ms": 6763
+    },
+    {
+      "image": "000006.jpg",
+      "reference_chars": 633,
+      "predicted_chars": 604,
+      "edits": 511,
+      "ms": 7046
+    },
+    {
+      "image": "000007.jpg",
+      "reference_chars": 584,
+      "predicted_chars": 567,
+      "edits": 518,
+      "ms": 7402
+    },
+    {
+      "image": "000008.jpg",
+      "reference_chars": 514,
+      "predicted_chars": 507,
+      "edits": 452,
+      "ms": 4899
+    },
+    {
+      "image": "000009.jpg",
+      "reference_chars": 377,
+      "predicted_chars": 408,
+      "edits": 314,
+      "ms": 4160
+    },
+    {
+      "image": "000010.jpg",
+      "reference_chars": 506,
+      "predicted_chars": 433,
+      "edits": 391,
+      "ms": 4728
+    },
+    {
+      "image": "000011.jpg",
+      "reference_chars": 350,
+      "predicted_chars": 326,
+      "edits": 256,
+      "ms": 3504
+    },
+    {
+      "image": "000012.jpg",
+      "reference_chars": 289,
+      "predicted_chars": 279,
+      "edits": 210,
+      "ms": 2953
+    },
+    {
+      "image": "000013.jpg",
+      "reference_chars": 327,
+      "predicted_chars": 352,
+      "edits": 285,
+      "ms": 4006
+    },
+    {
+      "image": "000014.jpg",
+      "reference_chars": 484,
+      "predicted_chars": 505,
+      "edits": 417,
+      "ms": 4304
+    },
+    {
+      "image": "000015.jpg",
+      "reference_chars": 325,
+      "predicted_chars": 277,
+      "edits": 243,
+      "ms": 3916
+    },
+    {
+      "image": "000016.jpg",
+      "reference_chars": 370,
+      "predicted_chars": 404,
+      "edits": 338,
+      "ms": 3616
+    },
+    {
+      "image": "000017.jpg",
+      "reference_chars": 281,
+      "predicted_chars": 268,
+      "edits": 214,
+      "ms": 3461
+    },
+    {
+      "image": "000018.jpg",
+      "reference_chars": 357,
+      "predicted_chars": 280,
+      "edits": 264,
+      "ms": 4097
+    },
+    {
+      "image": "000019.jpg",
+      "reference_chars": 334,
+      "predicted_chars": 361,
+      "edits": 290,
+      "ms": 3674
+    },
+    {
+      "image": "000020.jpg",
+      "reference_chars": 331,
+      "predicted_chars": 324,
+      "edits": 269,
+      "ms": 3228
+    },
+    {
+      "image": "000021.jpg",
+      "reference_chars": 349,
+      "predicted_chars": 323,
+      "edits": 271,
+      "ms": 3851
+    },
+    {
+      "image": "000022.jpg",
+      "reference_chars": 421,
+      "predicted_chars": 406,
+      "edits": 334,
+      "ms": 5309
+    },
+    {
+      "image": "000023.jpg",
+      "reference_chars": 265,
+      "predicted_chars": 256,
+      "edits": 210,
+      "ms": 3503
+    },
+    {
+      "image": "000024.jpg",
+      "reference_chars": 345,
+      "predicted_chars": 285,
+      "edits": 270,
+      "ms": 3125
+    },
+    {
+      "image": "000025.jpg",
+      "reference_chars": 422,
+      "predicted_chars": 390,
+      "edits": 353,
+      "ms": 4069
+    },
+    {
+      "image": "000026.jpg",
+      "reference_chars": 336,
+      "predicted_chars": 320,
+      "edits": 281,
+      "ms": 3696
+    },
+    {
+      "image": "000027.jpg",
+      "reference_chars": 486,
+      "predicted_chars": 487,
+      "edits": 398,
+      "ms": 5081
+    },
+    {
+      "image": "000028.jpg",
+      "reference_chars": 612,
+      "predicted_chars": 624,
+      "edits": 504,
+      "ms": 5468
+    },
+    {
+      "image": "000029.jpg",
+      "reference_chars": 785,
+      "predicted_chars": 713,
+      "edits": 671,
+      "ms": 5719
+    },
+    {
+      "image": "000030.jpg",
+      "reference_chars": 626,
+      "predicted_chars": 647,
+      "edits": 531,
+      "ms": 5841
+    },
+    {
+      "image": "000031.jpg",
+      "reference_chars": 498,
+      "predicted_chars": 526,
+      "edits": 432,
+      "ms": 4139
+    },
+    {
+      "image": "000032.jpg",
+      "reference_chars": 604,
+      "predicted_chars": 501,
+      "edits": 523,
+      "ms": 3701
+    },
+    {
+      "image": "000033.jpg",
+      "reference_chars": 439,
+      "predicted_chars": 433,
+      "edits": 387,
+      "ms": 5412
+    },
+    {
+      "image": "000034.jpg",
+      "reference_chars": 538,
+      "predicted_chars": 509,
+      "edits": 438,
+      "ms": 4232
+    },
+    {
+      "image": "000035.jpg",
+      "reference_chars": 609,
+      "predicted_chars": 493,
+      "edits": 431,
+      "ms": 6051
+    },
+    {
+      "image": "000036.jpg",
+      "reference_chars": 777,
+      "predicted_chars": 746,
+      "edits": 611,
+      "ms": 6607
+    },
+    {
+      "image": "000037.jpg",
+      "reference_chars": 719,
+      "predicted_chars": 692,
+      "edits": 552,
+      "ms": 6905
+    },
+    {
+      "image": "000038.jpg",
+      "reference_chars": 774,
+      "predicted_chars": 790,
+      "edits": 650,
+      "ms": 4974
+    },
+    {
+      "image": "000039.jpg",
+      "reference_chars": 570,
+      "predicted_chars": 665,
+      "edits": 599,
+      "ms": 6616
+    },
+    {
+      "image": "000040.jpg",
+      "reference_chars": 548,
+      "predicted_chars": 576,
+      "edits": 478,
+      "ms": 5227
+    }
+  ]
+}

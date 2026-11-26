@@ -1,0 +1,69 @@
+{
+  "training_pairs": 12433,
+  "ncl": {
+    "validation": {
+      "queries": 1572,
+      "catalog": 1645,
+      "recalled": 1572,
+      "baseline": {
+        "top1": 1572,
+        "top3": 1572
+      },
+      "trained": {
+        "top1": 1570,
+        "top3": 1572
+      }
+    },
+    "test": {
+      "queries": 1666,
+      "catalog": 1708,
+      "recalled": 1666,
+      "baseline": {
+        "top1": 1664,
+        "top3": 1666
+      },
+      "trained": {
+        "top1": 1664,
+        "top3": 1666
+      }
+    }
+  },
+  "gutenberg": {
+    "validation": {
+      "queries": 1500,
+      "catalog": 1500,
+      "recalled": 1500,
+      "baseline": {
+        "top1": 1496,
+        "top3": 1500
+      },
+      "trained": {
+        "top1": 1490,
+        "top3": 1498
+      }
+    },
+    "test": {
+      "queries": 1500,
+      "catalog": 1500,
+      "recalled": 1500,
+      "baseline": {
+        "top1": 1500,
+        "top3": 1500
+      },
+      "trained": {
+        "top1": 1494,
+        "top3": 1499
+      }
+    }
+  },
+  "thresholds": {
+    "unique_threshold": 0.76,
+    "margin": 0.08,
+    "candidate_threshold": 0.5,
+    "positive_hints": 1484,
+    "hard_negative_hints": 17,
+    "positive_pool": 1572,
+    "hard_negative_pool": 1483,
+    "scope": "NCL validation title-text proxy"
+  }
+}

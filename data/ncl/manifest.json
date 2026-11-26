@@ -1,0 +1,75 @@
+{
+  "provider": "國家圖書館 國際標準書號中心",
+  "dataset_page": "https://data.gov.tw/en/datasets/6730",
+  "license": "Open Government Data License, version 1.0",
+  "license_url": "https://data.gov.tw/license",
+  "retrieved_on": "2026-11-26",
+  "sources": [
+    {
+      "filename": "202510_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202510_isbn.csv",
+      "sha256": "54bff5bfa2d9567f9f6ec8b436c0ea1a2d6d0dada279f957445155bfcac6a62d",
+      "bytes": 1507213,
+      "source_records": 5538,
+      "retained_records": 2981
+    },
+    {
+      "filename": "202511_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202511_isbn.csv",
+      "sha256": "0cca4366d4a668edf220eb0d6e236d6ac4c2e7e4c532046a4e880e3e30a487b5",
+      "bytes": 1399597,
+      "source_records": 5117,
+      "retained_records": 2933
+    },
+    {
+      "filename": "202512_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202512_isbn.csv",
+      "sha256": "04c70fed32d4fe29bd025b877c6b6357a871c4d2c4de696e45882ac9efcdf41e",
+      "bytes": 1658433,
+      "source_records": 6025,
+      "retained_records": 3343
+    },
+    {
+      "filename": "202601_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202601_isbn.csv",
+      "sha256": "ee7375815b77616945078b75d4b50e142a35239501ecaf470e087d317d83c0e7",
+      "bytes": 1246527,
+      "source_records": 4524,
+      "retained_records": 2415
+    },
+    {
+      "filename": "202602_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202602_isbn.csv",
+      "sha256": "7df013f809ded89bbbae4b568d9172691bba95fbb935aaa91969af1e6a069ca0",
+      "bytes": 836486,
+      "source_records": 3088,
+      "retained_records": 1619
+    },
+    {
+      "filename": "202603_isbn.csv",
+      "url": "https://isbn.ncl.edu.tw/NEW_ISBNNet/opendata/202603_isbn.csv",
+      "sha256": "9d52778337dac7f119ef718f62d38a89f83bfb5882ef3d556035e1de9a8c40d7",
+      "bytes": 1590066,
+      "source_records": 5728,
+      "retained_records": 3000
+    }
+  ],
+  "excluded_rows": {
+    "other_language": 708,
+    "non_book_medium": 12972,
+    "invalid_isbn_or_no_han_title": 48,
+    "duplicate_isbn": 1
+  },
+  "catalog_rows": 16291,
+  "catalog_sha256": "9ee5bc7d60e1f0cef69b59baed8819d83d96b5d0d58bde73dc2c3c226131fb3b",
+  "retained_language_labels": {
+    "繁體中文": 16162,
+    "簡體中文": 129
+  },
+  "title_groups": 12939,
+  "split_counts": {
+    "train": 12938,
+    "test": 1708,
+    "validation": 1645
+  }
+}

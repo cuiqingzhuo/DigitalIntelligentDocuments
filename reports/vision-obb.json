@@ -1,0 +1,19 @@
+{
+  "split": "test",
+  "images": 301,
+  "instances": 4757,
+  "device": "0",
+  "image_size": 640,
+  "mAP50": 0.9859120936901177,
+  "mAP50_95": 0.8098196767064276,
+  "speed_ms": {
+    "preprocess": 1.4366026587963747,
+    "inference": 18.032890032091952,
+    "loss": 0.0019162797378345186,
+    "postprocess": 10.900518602840107
+  },
+  "checkpoint_bytes": 5645941,
+  "checkpoint": "bookspine-pilot.pt",
+  "checkpoint_sha256": "1465de814fbc9dbe91c64c0ecae14afa4a85e2d9632f747f06f8b0abd70fc4df",
+  "completed_epochs": 5
+}

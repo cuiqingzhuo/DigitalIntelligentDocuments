@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f8f7">
+  <title>找书 · 数智文枢</title>
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script type="module" src="/assets/reader.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><img src="/assets/mark.svg" alt=""><span>数智文枢<small>图书馆寻书助手</small></span></a>
+      <nav aria-label="站点导航"><a class="current" href="/" aria-current="page">读者找书</a><a href="/workbench">馆员工作台 <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div><p class="eyebrow"><span aria-hidden="true"></span><span id="library-name">图书馆 · 开架借阅区</span></p>
+        <h1>从书目，到书架</h1>
+        <p>选定版本，前往架面，拍张照片定位书脊。</p></div>
+      <div class="network" id="network" role="status">正在加载馆内数据</div>
+    </section>
+    <ol class="journey" id="journey" aria-label="找书进度">
+      <li aria-current="step"><span>1</span><div>选择图书<small>查书目，确认版本</small></div></li>
+      <li><span>2</span><div>到达书架<small>查看路线，确认架面</small></div></li>
+      <li><span>3</span><div>拍照定位<small>复核书脊和位置</small></div></li>
+      <li><span>4</span><div>核验取书<small>扫码核对馆藏</small></div></li>
+    </ol>
+    <p id="global-message" class="notice" role="status" hidden></p>
+    <div class="reader-grid">
+      <div class="flow">
+        <section class="card" id="catalog">
+          <div class="card-heading"><div><h2>检索书目</h2><p>按版本查看馆藏和可借状态。</p></div><span class="section-icon" aria-hidden="true">⌕</span></div>
+          <form id="search" class="search-bar">
+            <label class="sr-only" for="query">检索词</label><input type="search" id="query" name="q" placeholder="输入书名、作者、ISBN 或索书号" maxlength="120">
+            <label class="sr-only" for="search-field">检索字段</label><select id="search-field"><option value="all">全部字段</option><option value="title">书名</option><option value="author">作者</option><option value="isbn">ISBN</option><option value="call_number">索书号</option></select>
+            <button class="primary" type="submit">检索</button>
+          </form>
+          <div id="examples" class="examples" hidden><span>试点书目</span> <button data-query="数据结构">数据结构</button> <button data-query="算法导论">算法导论</button> <button data-query="计算机网络">计算机网络</button></div>
+          <div class="list-head"><h3 id="results-heading">馆藏书目</h3><span id="catalog-time"></span></div>
+          <div id="results" aria-live="polite"></div>
+          <div id="pagination" class="actions" hidden><button id="previous-page">上一页</button><span id="page-label"></span><button id="next-page">下一页</button></div>
+          <div id="copy-picker" class="inset" hidden>
+            <label for="copies">接受的复本</label><select id="copies"></select><button id="choose-book" class="primary">确认版本</button>
+          </div>
+        </section>
+        <section class="card" id="arrival" hidden>
+          <div class="card-heading"><div><h2>到架确认</h2><p>扫架标二维码，或手动输入眼前的架面号。</p></div></div>
+          <form id="shelf-form" class="stack">
+            <label for="shelf-marker">实际架面</label><div class="inline-form"><input id="shelf-marker" required placeholder="如 A01-A" maxlength="500"><button class="primary">确认架面</button></div>
+          </form>
+          <div class="actions"><label class="button file-label">从照片扫描架标<input id="scan-shelf" type="file" accept="image/*" capture="environment"></label></div>
+          <div id="arrival-message" class="notice" role="status" hidden></div>
+          <button id="adopt-face" hidden>改用实际架面</button>
+        </section>
+        <section class="card" id="capture" hidden>
+          <div class="card-heading"><div><h2>拍照定位</h2><p>正对层板，避开反光，让书脊保持清晰。</p></div></div>
+          <div id="face-direction" class="small"></div>
+          <label for="capture-scope">取景范围</label>
+          <select id="capture-scope"><option value="partial">局部照片 · 按画面左起计算</option><option value="left_visible">左边界可见 · 按本层左起计算</option></select>
+          <div class="actions"><label class="button file-label">拍照 / 选择图片<input id="photo-file" type="file" accept="image/*" capture="environment"></label></div>
+          <div class="examples" id="samples" hidden><span>自建书架样例</span><button data-sample="target">目标在画面内</button><button data-sample="wrong">只有同名异版</button><button data-sample="absent">目标不在画面</button></div>
+          <label class="check" id="consent-label"><input id="upload-consent" type="checkbox"><span id="consent-text">同意上传本次照片以进行云端复核</span></label>
+          <div class="photo" id="photo" hidden><img id="shelf-photo" alt="本次架面照片"><svg id="overlays" role="img" aria-label="书脊候选框" viewBox="0 0 1000 1000" preserveAspectRatio="none"></svg></div>
+          <div class="actions"><button class="primary" id="recognize" disabled>识别书脊</button><button id="clear-photo" hidden>重拍 / 清除</button><button id="manual-verify">手动核验取书</button></div>
+          <div id="recognition-result" aria-live="polite"></div>
+        </section>
+        <section class="card" id="verify" hidden>
+          <div class="card-heading"><div><h2>取书核验</h2><p>核对取下的实物，拿错可以继续查找。</p></div></div>
+          <form id="verify-form" class="stack"><label for="barcode">实物馆藏条码</label><div class="inline-form"><input id="barcode" required maxlength="80" placeholder="扫描或输入条码"><button class="primary">核对</button></div></form>
+          <div class="actions"><label class="button file-label">从照片扫描条码<input id="scan-book" type="file" accept="image/*" capture="environment"></label><button id="verify-pending">没有可用条码</button></div>
+          <p id="demo-barcodes" class="small" hidden>演示条码：第 3 版 DIW000001／DIW000009，第 2 版 DIW000002。</p>
+          <div id="verification-result" aria-live="polite"></div>
+        </section>
+        <section class="card" id="feedback" hidden>
+          <div class="card-heading"><div><h2>反馈与核查</h2><p>异常会生成工单，可凭当前会话查看回执。</p></div></div>
+          <form id="feedback-form" class="stack">
+            <label for="reason">反馈原因</label><select id="reason"><option value="unrecognized">本次未识别</option><option value="retake">重复重拍</option><option value="wrong_edition">拿错版本或复本</option><option value="marker_damage">架标损坏</option><option value="suspected_misplaced">疑似错架</option><option value="found">我找到了（自报）</option></select>
+            <label for="feedback-note">情况说明</label><textarea id="feedback-note" rows="2" maxlength="2000" placeholder="选填"></textarea>
+            <div class="actions"><button class="primary">提交反馈</button><button id="check-receipt" type="button" hidden>刷新工单回执</button></div>
+          </form>
+          <div id="feedback-result" aria-live="polite"></div>
+        </section>
+      </div>
+      <aside class="location">
+        <section class="card map-card" aria-labelledby="map-heading">
+          <div class="card-heading"><div><h2 id="map-heading">楼层导览</h2><p id="floor-label">正在读取楼层地图</p></div><span class="map-floor" id="floor-tag">1F</span></div>
+          <div class="map-frame" id="map-view"><p class="empty">正在加载地图…</p></div>
+          <div class="map-legend"><span><i class="dot entry"></i>起点</span><span><i class="dot destination"></i>选定架面</span><span><i class="dot route"></i>可通行路线</span></div>
+          <div class="map-controls">
+            <label for="route-start">路线起点</label><select id="route-start"></select>
+            <label for="route-face">目标架面</label><select id="route-face"></select>
+            <form id="manual-face-form" class="inline-form" hidden><input id="manual-face" aria-label="手动选择架面" maxlength="80" placeholder="架面编号"><button>选择</button></form>
+          </div>
+          <p class="map-status small" id="route-status" role="status">请选择要前往的架面。</p>
+        </section>
+        <section class="card compact" id="target-card" hidden><h2>当前任务</h2><div id="target-info"></div><p class="small" id="session-info"></p></section>
+        <div class="help-card"><strong>需要馆员帮助？</strong><p id="help-text">可前往本楼层入口附近的服务台。</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="shell footer"><span>数智文枢</span><span id="footer-context">开架借阅区导览</span></footer>
+</body>
+</html>

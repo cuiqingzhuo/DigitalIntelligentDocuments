@@ -1,0 +1,70 @@
+{
+  "source": "https://github.com/wyn2282145606-crypto/BookSpineDataset/releases/tag/v1.0",
+  "authors": [
+    "Yanan Wu",
+    "Zhigang Lian"
+  ],
+  "version": "v1.0",
+  "source_sha256": "951907289688081254794c87984d433053f09b149f3744ab6b3aae3d6c4bde4e",
+  "archive_bytes": 2079081677,
+  "splits": {
+    "test": {
+      "source_images": 301,
+      "source_boxes": 4759,
+      "images": 301,
+      "boxes": 4757
+    },
+    "val": {
+      "source_images": 301,
+      "source_boxes": 4857,
+      "images": 301,
+      "boxes": 4855
+    },
+    "train": {
+      "source_images": 903,
+      "source_boxes": 14220,
+      "images": 903,
+      "boxes": 14218
+    }
+  },
+  "excluded_boxes": [
+    [
+      "test",
+      "000216",
+      6
+    ],
+    [
+      "test",
+      "000017",
+      15
+    ],
+    [
+      "val",
+      "000005",
+      14
+    ],
+    [
+      "val",
+      "000005",
+      16
+    ],
+    [
+      "train",
+      "000405",
+      3
+    ],
+    [
+      "train",
+      "000517",
+      2
+    ]
+  ],
+  "excluded_duplicate_images": [],
+  "source_split_overlap_by_id": 0,
+  "spinetext40": {
+    "images": 40,
+    "spine_transcriptions": 614,
+    "whole_image_transcriptions": 40
+  },
+  "index_sha256": "d9295bfd12d00a3de3f4f5288e3b16363d3447501efd1587c4e3f4f1ff0ff4b9"
+}
